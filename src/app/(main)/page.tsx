@@ -1,8 +1,12 @@
 import React from 'react'
+import Plum from '~/components/Plum'
 
 const Homepage = () => {
   return (
-    <div>page</div>
+    <>
+      <Plum/>
+      <div>page</div>
+    </>
   )
 }
 

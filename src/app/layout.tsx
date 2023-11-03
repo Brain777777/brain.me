@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import { headers } from 'next/headers';
 
 import { TRPCReactProvider } from '~/trpc/react';
-import { ThemeProvider } from '~/components/providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,16 +26,16 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className='h-full' suppressHydrationWarning>
-        <body className={`font-sans ${inter.variable} h-full`}>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`font-sans ${inter.variable}`}>
           <TRPCReactProvider headers={headers()}>
-            <ThemeProvider
+            {/* <ThemeProvider
               attribute="class"
               defaultTheme="system"
               enableSystem
-            >
-              {children}
-            </ThemeProvider>
+            > */}
+            {children}
+            {/* </ThemeProvider> */}
           </TRPCReactProvider>
         </body>
       </html>
